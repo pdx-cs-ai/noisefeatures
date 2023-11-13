@@ -1,4 +1,4 @@
-# randbayes: show off noise feature problems
+# noisefeatures: show off noise feature problems
 Bart Massey
 
 This repo contains:
@@ -8,11 +8,8 @@ This repo contains:
 
 * Code for checking the generator output
 
-* Code for a Naïve Bayes classifier for the instances. The
-  classifier uses log-likelihood comparisons with
-  *m-*estimation and performs *n-*way cross-validation.
-  This code is taken unchanged from
-  <https://github.com/pdx-cs-ai/psambayes>
+* Code for some ML classifiers, taken from the `psam` Python
+  implementations at https://github.com/pdx-cs-ai
 
 * Some sample generated instances
 
