@@ -6,6 +6,7 @@ nrand = int(sys.argv[3])
 
 writer = csv.writer(sys.stdout)
 
+# Produce a 1 with probability p or a 0 with probability 1 - p.
 def flip(p):
     return int(random.random() < p)
 
@@ -20,11 +21,11 @@ def flip_good(cl, f, p):
         return ok
 
 def genrow(i):
-    label = i
+    name = i
     cl = flip(0.5)
     goods = [flip_good(cl, f, 0.7) for f in range(ngood)]
     rands = [flip(0.5) for _ in range(nrand)]
-    writer.writerow([label, cl] + goods + rands)
+    writer.writerow([name, cl] + goods + rands)
 
 for i in range(ninsts):
     genrow(i)
