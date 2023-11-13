@@ -154,12 +154,21 @@ class DTree(object):
         else:
             return self.neg.classify(inst)
 
+    def show(self, indent=0):
+        if self.label is not None:
+            print(f"{' '*indent}l={self.label}")
+            return
+        print(f"{' '*indent}f={self.f}")
+        self.neg.show(indent=indent+1)
+        self.pos.show(indent=indent+1)
+
 # Try training on the training instances and then
 # classifying the test instances.  Return the classification
 # accuracy.
 def try_tc(training, test):
     # Build a decision tree for the training data.
     tree = DTree(training)
+    #tree.show()
 
     # Score test instances.
     matrix = [[0] * 2 for _ in range(2)]
